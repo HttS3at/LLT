@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -en "$@" | hexdump -v -e '1/4 "push 0x%08x\n"' | tac

@@ -1,0 +1,4 @@
+#!/bin/bash
+lport=$((3333 + $RANDOM % 9999))
+cat $@ | nc -lnkvp $lport > /dev/null 2>&1 &
+echo $lport

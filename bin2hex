@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "$(xxd -ps -c 20 $@)" 

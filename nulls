@@ -1,0 +1,9 @@
+#!/bin/bash
+red=`tput setaf 1`
+reset=`tput sgr0`
+blink=`tput blink`
+readarray -t LINES < <(objdump --disassembler-options=intel -d $@ | grep " 00")
+for l in "${LINES[@]}"; do
+    l=$(echo $l|sed "s/\s00/ ${red}${blink}00${reset}/g")
+    echo $l
+done

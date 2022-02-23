@@ -1,0 +1,3 @@
+#!/bin/bash
+objcopy -I elf64-little -j .text -O binary $1 .outfile
+cat .outfile 

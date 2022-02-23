@@ -1,0 +1,3 @@
+#!/bin/bash
+bytes=$(xxd -p -u <<< "$@" | sed 's/\(..\)/0x&, /g; s/, $//;')
+echo "db: $bytes"
